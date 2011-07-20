@@ -1,0 +1,13 @@
+name: PuddiChat
+main: com.FriedTaco.taco.PuddiChat.PuddiChat
+version: 1.2
+commands:
+    puddi:
+        description: Enable/disable the puddi filter.
+        usage: /puddi
+    leetspeak:
+        description: Enable/disable the 1337 filter.
+        usage: /leetspeak
+    nyan:
+        description: Enable/disable the nyan filter.
+        usage: /nyan
