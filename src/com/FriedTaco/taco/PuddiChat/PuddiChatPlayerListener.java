@@ -21,9 +21,9 @@ public class PuddiChatPlayerListener extends PlayerListener {
     {
         Player player = event.getPlayer();
         boolean isExempt = false;
-        if((PuddiChat.Permissions == null && player.isOp()))
-            isExempt =true;
-        else if(PuddiChat.Permissions != null && PuddiChat.Permissions.has(player, "PuddiChat.exempt"))
+        if((player.isOp()))
+            isExempt = true;
+        else if(player.hasPermission("PuddiChat.exempt"))
             isExempt = true;
         if(!isExempt)
         {

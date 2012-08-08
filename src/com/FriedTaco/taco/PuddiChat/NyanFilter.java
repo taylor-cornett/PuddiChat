@@ -21,7 +21,7 @@ public class NyanFilter implements CommandExecutor
         if(sender instanceof Player)
         {
             player = (Player) sender;
-            if((PuddiChat.Permissions == null && player.isOp()) || (PuddiChat.Permissions != null && PuddiChat.Permissions.has(player, "PuddiChat.nyan")))
+            if(player.hasPermission("PuddiChat.nyan"))
             {
                 if(args.length==0)
                 {

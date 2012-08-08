@@ -21,7 +21,7 @@ public class LeetFilter implements CommandExecutor
         if(sender instanceof Player)
         {
             player = (Player) sender;
-            if((PuddiChat.Permissions == null && player.isOp()) || (PuddiChat.Permissions != null && PuddiChat.Permissions.has(player, "PuddiChat.leetspeak")))
+            if(player.hasPermission("PuddiChat.leetspeak"))
             {
                 if(args.length==0)
                 {

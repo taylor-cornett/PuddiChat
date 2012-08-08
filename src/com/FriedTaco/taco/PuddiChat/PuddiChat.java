@@ -29,25 +29,9 @@ package com.FriedTaco.taco.PuddiChat;
         private Logger log;
         private final PuddiChatPlayerListener playerListener  = new PuddiChatPlayerListener(this);
         private final HashMap<Player, Boolean> debugees = new HashMap<Player, Boolean>();  
-        public static PermissionHandler Permissions;
         public Configuration config = null;
         private static Yaml yaml = new Yaml(new SafeConstructor());
         public static String currentFilter;
-
-       
-         private void setupPermissions() {
-              Plugin test = this.getServer().getPluginManager().getPlugin("Permissions");
-
-              if (PuddiChat.Permissions == null) 
-              {
-                  if (test != null) {
-                      PuddiChat.Permissions = ((Permissions)test).getHandler();
-                      System.out.println("Puddichat has detected Permissions!");
-                  } else {
-                     System.out.println("Puddichat has not detected Permissions. Giving command permission to OP.");
-                  }
-              }
-          }
          
         public void loadSettings() throws Exception {
             if (!this.getDataFolder().exists())
@@ -83,7 +67,6 @@ package com.FriedTaco.taco.PuddiChat;
             pm.registerEvent(Event.Type.PLAYER_CHAT, playerListener, Priority.Normal, this);
             PluginDescriptionFile pdfFile = this.getDescription();
             System.out.println(pdfFile.getName() + " version " + pdfFile.getVersion() + " is enabled!" );
-            setupPermissions();
         }
 
         public boolean isDebugging(final Player player) {
